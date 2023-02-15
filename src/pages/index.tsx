@@ -1,0 +1,5 @@
+export {default as SignIn} from '@pages/Auth/SignIn'
+export {default as Home} from '@pages/Home'
+export {default as Company} from '@pages/About/Company'
+export {default as Team} from '@pages/About/Team'
+export {default as NotFound} from '@pages/NotFound'
