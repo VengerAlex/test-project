@@ -33,7 +33,12 @@ const menuData: MenuTS = {
         },
         {
           label: 'Team',
-          href: ROUTES.TEAM_ABOUT
+          items: [
+            {
+              label: 'Main Team',
+              href: '/main-team'
+            }
+          ]
         },
       ],
     },
