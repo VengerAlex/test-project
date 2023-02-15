@@ -1,14 +1,9 @@
-import {FC} from 'react'
 import {Typography, MenuItem,} from '@mui/material'
-import { MenuTS} from '@utils/types'
 import {MenuWrapper, SMenuList} from '@ui/styles'
 import {DropDownItem} from '@ui/Menu/DropDownItem'
+import menuData from '@data/menu/index.json'
 
-interface MenuProps {
-  menuData: MenuTS
-}
-
-const Menu: FC<MenuProps> = ({menuData}) => {
+const Menu = () => {
   const {title, items} = menuData
 
   return <MenuWrapper>

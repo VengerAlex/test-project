@@ -5,8 +5,6 @@ import {
   CssBaseline,
   styled
 } from '@mui/material'
-import {MenuTS} from '@utils/types'
-import {ROUTES} from '@utils/constants'
 import Menu from '@ui/Menu'
 
 const Wrapper = styled(Box)`
@@ -17,44 +15,12 @@ const Wrapper = styled(Box)`
   background-color: rgb(64, 73, 51);
 `
 
-const menuData: MenuTS = {
-  title: 'Company Name',
-  items: [
-    {
-      label: 'Home',
-      href: ROUTES.HOME
-    },
-    {
-      label: 'About',
-      items: [
-        {
-          label: 'Company',
-          href: ROUTES.COMPANY_ABOUT
-        },
-        {
-          label: 'Team',
-          items: [
-            {
-              label: 'Main Team',
-              href: '/main-team'
-            }
-          ]
-        },
-      ],
-    },
-    {
-      label: 'Sign-In',
-      href: ROUTES.SIGN_IN
-    },
-  ],
-}
-
 const MainLayout: FC<PropsWithChildren> = ({children}) => {
   return (
     <Wrapper>
       <Container maxWidth='lg'>
         <CssBaseline/>
-        <Menu menuData={menuData} />
+        <Menu />
         <Box>
           {children}
         </Box>

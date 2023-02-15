@@ -1,0 +1,32 @@
+{
+    "title": "Company Name",
+    "items": [
+        {
+            "label": "Home",
+            "href": "/"
+        },
+        {
+            "label": "About",
+            "items": [
+                {
+                    "label": "Company",
+                    "href": "/about/company"
+                },
+                {
+                    "label": "Team",
+                    "items": [
+                        {
+                            "label": "Main Team",
+                            "href": "/about/main-team"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "label": "Sign-In",
+            "href": "/sign-in"
+        }
+    ]
+}
+
