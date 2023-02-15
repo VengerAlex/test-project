@@ -1,10 +1,9 @@
 import {Route, Routes} from 'react-router-dom'
-import Home from '@pages/Home'
-import Team from '@pages/About/Team'
-import Company from '@pages/About/Company'
-import SignIn from '@pages/Auth/SignIn'
-import NotFound from '@pages/NotFound'
 import {ROUTES} from '@utils/constants'
+import {
+  Home, Team, SignIn,
+  Company, NotFound
+} from '@pages/index'
 
 const App = () => {
   return (
