@@ -13,6 +13,6 @@ export const signInSchema = yup.object().shape({
     .string()
     .matches(SPACE_REGEXP, SPACE_WARNING)
     .required()
-    .min(8)
+    .min(5)
     .max(30),
 })
