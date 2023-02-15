@@ -12,7 +12,7 @@ const Wrapper = styled(Box)`
   flex-direction: column;
   height: 100vh;
   width: 100vw;
-  background-color: rgb(64, 73, 51);
+  background-color: rgb(75, 111, 108);
 `
 
 const MainLayout: FC<PropsWithChildren> = ({children}) => {
