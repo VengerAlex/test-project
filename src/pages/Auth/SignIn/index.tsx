@@ -7,8 +7,15 @@ import {useForm} from 'react-hook-form'
 import {signInSchema} from '@utils/schemas'
 import {Input} from '@ui/Input'
 import {showErrorText} from '@utils/utils'
+import {useLogin} from '../../../services/auth.service'
+
+// CREDENTIAL TO SIGN IN
+// username: kminchelle
+// password: 0lelplR
 
 const SignIn = () => {
+  const {mutate,data} = useLogin()
+
   const {
     control,
     getValues,
@@ -23,11 +30,15 @@ const SignIn = () => {
   const submitHandler = (data: ISignInForm) => {
     const { username, password } = data
 
-    console.log(username, password)
+    mutate({ username, password })
   }
 
   const cancelRequestHandler = () => {
-    console.log('CANCEl')
+    //!!TODO CANCEL THE REQUEST
+  }
+
+  if (data) {
+    return <Typography sx={{width: 5}}>USERNAME: {data?.username}</Typography>
   }
 
   return <Box sx={{maxWidth: '500px'}}>
