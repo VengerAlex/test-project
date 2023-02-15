@@ -8,3 +8,8 @@ export interface MenuTS {
   title: string
   items: MenuItemTS[]
 }
+
+export interface ISignInForm {
+  username: string;
+  password: string;
+}
