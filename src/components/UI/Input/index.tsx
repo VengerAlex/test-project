@@ -27,8 +27,6 @@ export const Input = ({
       {...control.register(formName)}
       {...props}
       InputLabelProps={{ shrink: true }}
-      onCopy={(event) => isPassword && event.preventDefault()}
-      onPaste={(event) => isPassword && event.preventDefault()}
       name={formName}
       type={!isPassword ? 'text' : showPassword ? 'text' : 'password'}
       variant='standard'
