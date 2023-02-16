@@ -1,4 +1,4 @@
-import { createTheme } from '@mui/material'
+import {createTheme} from '@mui/material'
 
 declare module '@mui/material/styles' {
   interface Palette {
@@ -56,7 +56,7 @@ export const theme = createTheme({
     allVariants: {
       fontFamily: ['Montserrat', 'sans-serif'].join(','),
       fontSize: 16,
-      color: '#fff',
+      color: '#000000',
     },
     h1: {
       textTransform: 'uppercase',
