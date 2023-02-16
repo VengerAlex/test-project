@@ -22,7 +22,8 @@
         "@components/*": ["src/components/*"],
         "@utils/*": ["src/utils/*"],
         "@pages/*": ["src/pages/*"],
-        "@data/*": ["src/data/*"]
+        "@data/*": ["src/data/*"],
+        "@hooks/*": ["src/hooks/*"],
     }
   },
     "include": ["src/**/*", "*"],
