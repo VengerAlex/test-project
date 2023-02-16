@@ -1,13 +1,12 @@
-import {Typography, MenuItem,} from '@mui/material'
+import {MenuItem,} from '@mui/material'
 import {MenuWrapper, SMenuList} from '@ui/styles'
 import {DropDownItem} from '@ui/Menu/DropDownItem'
 import menuData from '@data/menu/index.json'
 
 const Menu = () => {
-  const {title, items} = menuData
+  const {items} = menuData
 
   return <MenuWrapper>
-    <Typography variant='body1'>{title}</Typography>
     <SMenuList>
       {items.map((item, index) => (
         <MenuItem
