@@ -1,12 +1,12 @@
-import { useState } from 'react'
+import {useState} from 'react'
 import {
   IconButton,
   InputAdornment, TextField,
   TextFieldProps, Typography,
 } from '@mui/material'
+import { Eye, EyeSlash } from 'phosphor-react'
 
 // TODO! Replace any
-
 type InputProps = TextFieldProps & {
   isPassword?: boolean;
   isResetPassword?: boolean;
@@ -26,7 +26,7 @@ export const Input = ({
     <TextField
       {...control.register(formName)}
       {...props}
-      InputLabelProps={{ shrink: true }}
+      InputLabelProps={{shrink: true}}
       name={formName}
       type={!isPassword ? 'text' : showPassword ? 'text' : 'password'}
       variant='standard'
@@ -36,7 +36,7 @@ export const Input = ({
             endAdornment: (
               <InputAdornment position='end'>
                 <IconButton onClick={() => setShowPassword(!showPassword)}>
-                  <Typography>{showPassword ? 'Hide' : 'Show'}</Typography>
+                  <Typography>{showPassword ? <Eye size={32} /> : <EyeSlash size={32} />}</Typography>
                 </IconButton>
               </InputAdornment>
             ),
