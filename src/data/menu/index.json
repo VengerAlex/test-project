@@ -1,5 +1,4 @@
 {
-    "title": "Company Name",
     "items": [
         {
             "label": "Home",
@@ -14,18 +13,9 @@
                 },
                 {
                     "label": "Team",
-                    "items": [
-                        {
-                            "label": "Main Team",
-                            "href": "/about/main-team"
-                        }
-                    ]
+                    "href": "/about/main-team"
                 }
             ]
-        },
-        {
-            "label": "Sign-In",
-            "href": "/sign-in"
         }
     ]
 }
