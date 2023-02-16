@@ -1,4 +1,5 @@
 import {useMutation} from 'react-query'
+import {_axios, URL_TEMPLATES} from '../api'
 
 type LoginPayload = {
   username: string;
@@ -9,18 +10,9 @@ type LoginResponse = {
   username: string;
 }
 
-// rewrite using axios, extract API link to .env file
 export const useLogin = () => {
-  const loginMutation = useMutation<LoginResponse, Error, LoginPayload>(
+  return  useMutation<LoginResponse, Error, LoginPayload>(
     (payload) =>
-      fetch('https://dummyjson.com/auth/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
-      }).then((res) => {
-        return res.json()
-      }),
+      _axios.post(URL_TEMPLATES.LOGIN, {...payload})
   )
-
-  return loginMutation
 }
