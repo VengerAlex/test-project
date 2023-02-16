@@ -1,20 +1,27 @@
-import {FC, PropsWithChildren} from 'react'
+import {ReactNode} from 'react'
 import {BrowserRouter} from 'react-router-dom'
-import MainLayout from '@components/MainLayout'
 import {ThemeProvider} from '@mui/material'
 import {QueryClient, QueryClientProvider} from 'react-query'
-import {theme} from '../../themes'
+import {theme} from '../../theme'
+import Layout from '@components/Layouts'
+import {AuthProvider} from '@components/Contexts/AuthContext'
 
 const queryClient = new QueryClient()
 
-const MainProvider: FC<PropsWithChildren> = ({children}) => (
+interface MainProviderProps {
+  children: ReactNode
+}
+
+const MainProvider = ({children}: MainProviderProps) => (
   <BrowserRouter>
     <QueryClientProvider client={queryClient}>
-      <MainLayout>
-        <ThemeProvider theme={theme}>
-          {children}
-        </ThemeProvider>
-      </MainLayout>
+      <AuthProvider>
+        <Layout>
+          <ThemeProvider theme={theme}>
+            {children}
+          </ThemeProvider>
+        </Layout>
+      </AuthProvider>
     </QueryClientProvider>
   </BrowserRouter>
 )
