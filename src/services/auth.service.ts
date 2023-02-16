@@ -7,11 +7,15 @@ type LoginPayload = {
 };
 
 type LoginResponse = {
-  username: string;
+  data: {
+    username: string;
+    email: string;
+    token: string;
+  }
 }
 
 export const useLogin = () => {
-  return  useMutation<LoginResponse, Error, LoginPayload>(
+  return useMutation<LoginResponse, Error, LoginPayload>(
     (payload) =>
       _axios.post(URL_TEMPLATES.LOGIN, {...payload})
   )
