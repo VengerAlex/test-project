@@ -2,7 +2,7 @@ import { useState } from 'react'
 import {
   IconButton, InputAdornment, TextField, TextFieldProps
 } from '@mui/material'
-import { Eye, EyeSlash } from 'phosphor-react'
+import { Visibility, VisibilityOff } from '@mui/icons-material'
 
 // TODO! Replace any
 type InputProps = TextFieldProps & {
@@ -45,7 +45,7 @@ export const Input = ({
             endAdornment: (
               <InputAdornment position='end'>
                 <IconButton onClick={() => setShowPassword(!showPassword)}>
-                  {showPassword ? <Eye size={24} /> : <EyeSlash size={24} />}
+                  {showPassword ? <Visibility /> : <VisibilityOff />}
                 </IconButton>
               </InputAdornment>
             ),
