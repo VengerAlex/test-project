@@ -1,42 +1,42 @@
-import {createTheme} from '@mui/material'
+import { createTheme } from '@mui/material'
 
 declare module '@mui/material/styles' {
   interface Palette {
-    black: string;
-    violet: string;
-    blue: string;
-    orange: string;
-    red: string;
+    black: string
+    violet: string
+    blue: string
+    orange: string
+    red: string
     green: {
-      main: string;
-      lighter: string;
-      border: string;
-    };
-    white: string;
-    bgr: string;
-    disabled: string;
+      main: string
+      lighter: string
+      border: string
+    }
+    white: string
+    bgr: string
+    disabled: string
   }
 
   interface PaletteOptions {
-    black: string;
-    violet: string;
-    blue: string;
-    orange: string;
-    red: string;
+    black: string
+    violet: string
+    blue: string
+    orange: string
+    red: string
     green: {
-      main: string;
-      lighter: string;
-      border: string;
-    };
-    white: string;
-    bgr: string;
-    disabled: string;
+      main: string
+      lighter: string
+      border: string
+    }
+    white: string
+    bgr: string
+    disabled: string
   }
 }
 
 export const theme = createTheme({
   palette: {
-    success: {main: '#539713',},
+    success: { main: '#539713' },
     black: '#1d283a',
     violet: '#d4ccf1',
     blue: '#69b0ff',
