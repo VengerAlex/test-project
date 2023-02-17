@@ -3,13 +3,14 @@ import {
   IconButton, InputAdornment, TextField, TextFieldProps
 } from '@mui/material'
 import { Visibility, VisibilityOff } from '@mui/icons-material'
+import { LoginPayload } from 'src/services/auth.service'
+import { Control } from 'react-hook-form'
 
-// TODO! Replace any
 type InputProps = TextFieldProps & {
   isPassword?: boolean
   isResetPassword?: boolean
-  control: any
-  formName: string
+  control: Control<LoginPayload>
+  formName: keyof LoginPayload
 }
 
 export const Input = ({

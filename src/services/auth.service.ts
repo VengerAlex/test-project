@@ -1,7 +1,7 @@
 import { useMutation } from 'react-query'
 import { _axios, URL_TEMPLATES } from '../api'
 
-type LoginPayload = {
+export type LoginPayload = {
   username: string
   password: string
 }
