@@ -1,4 +1,4 @@
-import { Box, Button, Stack, styled, Typography } from '@mui/material'
+import { Box, Stack, styled, Typography } from '@mui/material'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { ISignInForm } from '@utils/types'
 import { useForm } from 'react-hook-form'
@@ -6,10 +6,11 @@ import { signInSchema } from '@utils/schemas'
 import { Input } from '@ui/Input'
 import { showErrorText } from '@utils/utils'
 import { useLogin } from '../../services/auth.service'
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import { AuthContext } from '@components/Contexts/AuthContext'
 import { useNavigate } from 'react-router-dom'
 import { ROUTES } from '@utils/constants'
+import { LoadingButton } from '@mui/lab'
 
 const SignWrapper = styled(Box)`
   width: 350px;
@@ -36,7 +37,7 @@ const Subtitle = styled(Typography)`
   padding: 30px;
   color: dimgray;
 `
-const PrimaryButton = styled(Button)`
+const PrimaryButton = styled(LoadingButton)`
   width: 100%;
   font-size: 14px;
   padding: 7px 10px;
@@ -51,7 +52,7 @@ const PrimaryButton = styled(Button)`
 
   :hover {
     color: white;
-    background-color: #1976d2;;
+    background-color: #1976d2;
   }
 `
 const SecondaryButton = styled(PrimaryButton)`
@@ -70,6 +71,7 @@ const SignIn = () => {
   const navigate = useNavigate()
   const { login } = useContext(AuthContext)
   const { mutate, error } = useLogin()
+  const [loading, setLoading] = useState(false)
 
   const {
     control,
@@ -85,6 +87,7 @@ const SignIn = () => {
   const { username, password } = getValues()
 
   const submitHandler = (data: ISignInForm) => {
+    setLoading(true)
     const { username, password } = data
 
     mutate(
@@ -93,10 +96,13 @@ const SignIn = () => {
         onSuccess: ({ data }) => {
           login({ username: data.username, email: data.email })
           localStorage.setItem('token', data.token)
+          setLoading(false)
+
           navigate(ROUTES.HOME)
         },
         onError: () => {
           reset()
+          setLoading(false)
         },
       }
     )
@@ -139,6 +145,8 @@ const SignIn = () => {
             variant='outlined'
             type='submit'
             disabled={!isValid}
+            loading={loading}
+            loadingPosition='start'
             sx={{ mb: 2 }}
           >
             Log In
