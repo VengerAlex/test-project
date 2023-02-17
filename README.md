@@ -1,36 +1,70 @@
-# Test task
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
+</details>
 
-This task includes several pages and components
-such as a sidebar and a form.
-The menu component in the sidebar is multi-level.
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-In order to login to site, you have to use these credentials:
-- username: atuny0
-- password: 9uQFF1Lh
+The project was a part of a test work. The main idea was to build SPA, using
+React & Typescript, MUI. The project consisted of a couple of pages, reusable menu (you should an object, which can be nested, and these items will be displayed in your menu) and a SignIn form, which should display error, if there are any.
+### In order to sign in, you need to use these credentials
+### In order to sign in, you need to use these credentials
+   ```
+   username: kminchelle
+   password: 0lelplR
+   ```
 
-## Used technologies and libraries
+### Built With
 
-- ReactJS
-- TypeScript
-- Material-UI
-- React-Hook-Form
-- React-Query
+* React
+* Typescript
+* MUI
+* React-Hook-Form
+* Yup
+* Axios
+* React-Query
+* RTL
 
-## Available Scripts
 
-In the project directory, you can run:
+<!-- GETTING STARTED -->
+## Getting Started
 
-### `yarn install`
+### Installation
 
-To install all dependencies
+In order to install this project locally, you need
 
-### `yarn start`
+1. Clone the repo
+   ```sh
+   git clone https://github.com/VengerAlex/test-project.git
+   ```
+2. Install NPM packages
+   ```sh
+   yarn install
+   ```
+3. Launch the project
+   ```sh
+   yarn dev
+   ```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<!-- CONTACT -->
+## Contact
 
-### `yarn lint`
+Linkedin - https://www.linkedin.com/in/olexander-venger-299646214/
 
-Runs linter to check some issues with code
+Project Link: https://github.com/VengerAlex/test-project
 
-### `yarn lint lint:fix`
