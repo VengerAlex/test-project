@@ -1,7 +1,5 @@
-import {createContext, ReactElement} from 'react'
-import {useNavigate} from 'react-router-dom'
-import {ROUTES} from '@utils/constants'
-import {useLocalStorage} from '@hooks/useLocalStorage'
+import { createContext, ReactElement } from 'react'
+import { useLocalStorage } from '@hooks/useLocalStorage'
 
 interface User {
   email: string
@@ -9,18 +7,17 @@ interface User {
 }
 
 interface ILocaleContext {
-  user: User | null,
-  login: (value: User) => void,
+  user: User | null
+  login: (value: User) => void
   logout: () => void
 }
 export const AuthContext = createContext<ILocaleContext>({
   user: null,
   login: () => null,
-  logout: () => null
+  logout: () => null,
 })
 
-export const AuthProvider = ({children}: {children: ReactElement}) => {
-  const navigate = useNavigate()
+export const AuthProvider = ({ children }: { children: ReactElement }) => {
   const [user, setUser] = useLocalStorage<User | null>('user', null)
 
   const login = (userData: User) => {
@@ -29,15 +26,8 @@ export const AuthProvider = ({children}: {children: ReactElement}) => {
 
   const logout = () => {
     setUser(null)
-
     localStorage.removeItem('token')
-
-    navigate(ROUTES.SIGN_IN)
   }
 
-  return (
-    <AuthContext.Provider value={{user, login, logout}}>
-      {children}
-    </AuthContext.Provider>
-  )
+  return <AuthContext.Provider value={{ user, login, logout }}>{children}</AuthContext.Provider>
 }
