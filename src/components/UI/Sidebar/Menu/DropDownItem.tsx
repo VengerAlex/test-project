@@ -1,7 +1,5 @@
 import { useState } from 'react'
-import {
-  Box, ListItem, ListItemIcon, ListItemButton 
-} from '@mui/material'
+import { Box, ListItem, ListItemIcon, ListItemButton, Typography } from '@mui/material'
 import { Link, useLocation } from 'react-router-dom'
 import { MenuItemTS } from '@utils/types'
 import styled from '@emotion/styled'
@@ -17,7 +15,7 @@ const ListWrapper = styled(Box)`
 const SListItemButton = styled(ListItemButton)`
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   gap: 5px;
   font-size: 14px;
   color: white;
@@ -35,17 +33,20 @@ const SListItem = styled(ListItem)`
   padding: 0;
   margin: 0;
 `
-const Item = styled(Box)`
-  display: flex;
-  justify-content: center;
+const LinkItem = styled(Link)`
+  text-align: start;
   width: 100%;
-  padding: 5px 10px;
-  border-radius: 6px;
 
-  a {
+  p {
+    border-radius: 6px;
+    padding: 5px 10px;
     font-size: 14px;
     color: white;
   }
+`
+const SListItemIcon = styled(ListItemIcon)`
+  display: flex;
+  justify-content: end;
 `
 
 export const DropDownItem = ({ item }: DropDownItemProps) => {
@@ -60,7 +61,7 @@ export const DropDownItem = ({ item }: DropDownItemProps) => {
       <ListWrapper>
         <SListItemButton onClick={() => setIsDropDownOpen(!isDropDownOpen)}>
           {item.label}
-          <ListItemIcon>{currentIcon}</ListItemIcon>
+          <SListItemIcon sx={{ marginLeft: 'auto' }}>{currentIcon}</SListItemIcon>
         </SListItemButton>
         {isDropDownOpen &&
           item.items.map((child, index) => (
@@ -72,9 +73,11 @@ export const DropDownItem = ({ item }: DropDownItemProps) => {
     )
   } else {
     return (
-      <Item sx={isActivePage ? { backgroundColor: 'rgba(255, 255, 255, 0.2)' } : {}}>
-        <Link to={item.href || '#'}>{item.label}</Link>
-      </Item>
+      <LinkItem to={item.href || '#'}>
+        <Typography sx={isActivePage ? { backgroundColor: 'rgba(255, 255, 255, 0.2)' } : {}}>
+          {item.label}
+        </Typography>
+      </LinkItem>
     )
   }
 }
