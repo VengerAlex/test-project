@@ -1,8 +1,7 @@
-import { useContext } from 'react'
-import { Box, styled, Typography } from '@mui/material'
-import Menu from '@ui/Menu'
-import { AuthContext } from '@components/Contexts/AuthContext'
-import { Footer } from '@ui/Footer'
+import { Box, styled } from '@mui/material'
+import { Menu } from '@components/UI/Sidebar/Menu'
+import { Footer } from '@components/UI/Sidebar/Footer'
+import { Header } from '@components/UI/Sidebar/Header'
 
 const SSidebar = styled(Box)`
   width: 300px;
@@ -16,16 +15,9 @@ const SSidebar = styled(Box)`
 `
 
 const Sidebar = () => {
-  const { user } = useContext(AuthContext)
-
   return (
     <SSidebar>
-      <Typography
-        sx={{ color: '#fff' }}
-        variant='h3'
-      >
-        {user?.username }
-      </Typography>
+      <Header />
       <Menu />
       <Footer />
     </SSidebar>
