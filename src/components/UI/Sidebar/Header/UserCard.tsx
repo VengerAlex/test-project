@@ -34,7 +34,7 @@ export const UserCard = () => {
   const { user } = useContext(AuthContext)
 
   return user ? (
-    <SUserCard>
+    <SUserCard data-testid='user-card'>
       <UserIcon>{user?.username.substring(0, 1)}</UserIcon>
       <UserName variant='h5'>{user?.username}</UserName>
     </SUserCard>
