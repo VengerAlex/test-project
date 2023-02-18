@@ -25,7 +25,7 @@ describe('User', () => {
   it('render user card', () => {
     const user = {
       user: {
-        email: 'userenail',
+        email: 'email',
         username: 'username',
       },
       login: () => null,
