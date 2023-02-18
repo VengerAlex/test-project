@@ -16,7 +16,7 @@ const SSidebar = styled(Box)`
 
 const Sidebar = () => {
   return (
-    <SSidebar>
+    <SSidebar data-testid='sidebar'>
       <Header />
       <Menu />
       <Footer />
