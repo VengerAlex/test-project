@@ -1,5 +1,5 @@
 import {
-  Box, Stack, styled, Typography 
+  Box, Stack, styled, Typography
 } from '@mui/material'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { ISignInForm } from '@utils/types'
@@ -102,7 +102,7 @@ export const AuthForm = () => {
   }
 
   return (
-    <SignWrapper>
+    <SignWrapper data-testid='auth-form'>
       <Box>
         <Title variant='h4'>Hello System</Title>
         <Subtitle variant='h5'>Log In</Subtitle>
@@ -134,6 +134,7 @@ export const AuthForm = () => {
         </Stack>
 
         <PrimaryButton
+          data-testid='login-button'
           variant='outlined'
           type='submit'
           disabled={!isValid}
