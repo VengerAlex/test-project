@@ -23,7 +23,6 @@
 The project was a part of a test work. The main idea was to build SPA, using
 React & Typescript, MUI. The project consisted of a couple of pages, reusable menu (you should an object, which can be nested, and these items will be displayed in your menu) and a SignIn form, which should display error, if there are any.
 ### In order to sign in, you need to use these credentials
-### In order to sign in, you need to use these credentials
    ```
    username: kminchelle
    password: 0lelplR
